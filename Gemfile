@@ -60,12 +60,11 @@ group :development do
 
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", "~> 1.4"
-  gem 'devise', '~> 4.9', '>= 4.9.3'
 end
 
 group :production do
   gem 'pg', '~> 1.5', '>= 1.5.6'
-  # gem 'rails_12factor', '~> 0.0.3'
+  gem 'rail~> 1.5.6.0.3'
 end
 
 group :test do
