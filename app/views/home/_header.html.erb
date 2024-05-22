@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <%= link_to 'Task Manager', root_path, class:"navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'About', home_about_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Tasks', tasks_path, class:"nav-link"%>
+        </li>
+        <% if employee_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Add Tasks', new_task_path, class:"nav-link"%>
+          </li>
+        <% end %>
+      </ul>
+      <span class="navbar-text">
+        <ul class="nav justify-content-end">
+          <% if employee_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Edit Profile', edit_employee_registration_path, class:"nav-link"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign Out', destroy_employee_session_path, data: { turbo_method: :delete }, class:"nav-link"%>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Sign Up', new_employee_registration_path, class:"nav-link"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Log In', new_employee_session_path, class:"nav-link"%>
+            </li>
+          <% end %>
+        </ul>
+      </span>
+    </div>
+  </div>
+</nav>
