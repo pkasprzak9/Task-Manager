@@ -59,7 +59,8 @@ group :development do
   # gem "spring"
 
   # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+  gem "sqlite3", "~> 1.4"
+  gem 'devise', '~> 4.9', '>= 4.9.3'
 end
 
 group :production do
